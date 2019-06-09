@@ -1,0 +1,13 @@
+{
+  "name": "messenger",
+  "version": "0.0.1",
+  "description": "Roosters team's messenger",
+  "dependencies": {
+    "ajax-request": "^1.2.3",
+    "express": "^4.16.4",
+    "jquery": "^3.4.1",
+    "socket.io": "^2.2.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.6"
+  }
+}

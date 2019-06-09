@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+  </head>
+  <body>
+    <app class="app">
+      <main id="messages" class="messages">
+        <div class="container">
+          <ul>
+            <li v-for="message in messages">
+              <div class="message uk-animation-scale-up uk-animation-fast">
+                {{ message }}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <div class="control">
+        <div class="container">
+          <form class="flex" action="">
+            <input class="uk-input" id="m" autocomplete="off" placeholder="Начинайте набирать..." />
+            <button class="uk-button uk-button-primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </app>
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      var messages = new Vue({
+        el: '#messages',
+        data: {
+          messages: []
+        }
+      })
+      $(function () {
+        var socket = io();
+        $('form').submit(function(e){
+          e.preventDefault(); // prevents page reloading
+          socket.emit('chat message', $('#m').val());
+          $('#m').val('');
+          return false;
+        });
+        socket.on('chat message', function(msg){
+          messages.messages.push(msg)
+        });
+      });
+    </script>
+  </body>
+</html>

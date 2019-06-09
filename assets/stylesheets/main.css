@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box; }
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  position: relative; }
+
+body {
+  background: #dce3ff; }
+
+html, body, .app {
+  height: 100%; }
+
+.app {
+  display: flex;
+  flex-direction: column; }
+
+.messages {
+  flex: 1;
+  padding: 5px; }
+
+.flex {
+  display: flex; }
+
+.control {
+  background: #f7f7f7;
+  padding: 7px;
+  box-shadow: 0 -1px 7px rgba(0, 0, 0, 0.1); }
+
+.message {
+  list-style: none;
+  background: #fff;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 5px 0; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+/*# sourceMappingURL=main.css.map */
