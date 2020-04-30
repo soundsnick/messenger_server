@@ -5,7 +5,7 @@
   "dependencies": {
     "ajax-request": "^1.2.3",
     "express": "^4.16.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "socket.io": "^2.2.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6"
