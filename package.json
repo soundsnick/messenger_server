@@ -4,7 +4,7 @@
   "description": "Roosters team's messenger",
   "dependencies": {
     "ajax-request": "^1.2.3",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "jquery": "^3.4.1",
     "socket.io": "^2.2.0",
     "vue": "^2.6.10",
